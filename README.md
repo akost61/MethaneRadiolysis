@@ -31,7 +31,9 @@ This repository contains a Python-based Monte Carlo simulation for methane radio
 
 - tqdm
 
-(Optional: matplotlib for analysis and plotting)
+- openpyxl
+
+- matplotlib.pyplot
 
 ## Usages
 
