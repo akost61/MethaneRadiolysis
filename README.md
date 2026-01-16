@@ -31,7 +31,9 @@ This repository contains a Python-based Monte Carlo simulation for methane radio
 
 - tqdm
 
-(Optional: matplotlib for analysis and plotting)
+- openpyxl
+
+- matplotlib.pyplot
 
 ## Usages
 
@@ -53,7 +55,9 @@ Higher energies and larger numbers of histories result in longer runtimes. These
 
 ## Output
 
-The simulation produces:
+The simulation produces excel sheets:
+
+1. main.py
 
 - Event-level interaction data
 
@@ -61,6 +65,9 @@ The simulation produces:
 
 - Energy transfer metrics
 
+2. main_generation.py
+
 - Daughter electron generation data
+
 
 Outputs are stored as structured data objects (pandas DataFrames) for analysis.
