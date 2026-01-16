@@ -39,12 +39,12 @@ run_batch_simulations(eV, storage, manipulated=-1):
   - Returns: event counts, terminating energies, attachment energies for entire batch
 
 run_simulations(eV, total_sims, manipulated=-1, chunk_size=500):
-  - High-level interface with progress tracking
+  - Interface on terminal with progress tracking
   - Processes simulations in chunks to manage memory
   - Aggregates results across all simulations
   - Optional manipulation parameter for sensitivity analysis (10% cross section increase)
 
-GENERATION TRACKING:
+GENERATION FUNCTIONS:
 
 sim_generation(eV):
   - Tracks events by electron generation (primary, secondary, tertiary, etc.)
@@ -56,7 +56,7 @@ run_generation_simulations_batch(eV, total_sims):
   - Not parallelized to preserve generation statistics
 
 run_generation_simulations(eV, total_sims, chunk_size=500):
-  - High-level interface for generation-resolved simulations
+  - Interface on terminal with progress tracking
   - Returns summed generation data across all simulations
 
 UTILITIES:

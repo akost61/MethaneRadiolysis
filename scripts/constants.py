@@ -1,7 +1,7 @@
 import numpy as np
 
 '''
-Global Constants and Event Definitions for Methane (CH₄) Electron-Impact Cross Sections
+Global Constants and Event Definitions for Methane (CH₄) Electron Inelastic Cross Sections
 
 PHYSICAL CONSTANTS:
 E_R: Rydberg constant

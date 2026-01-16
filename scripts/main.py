@@ -22,7 +22,7 @@ DATA PROCESSING:
 
 create_dataframes(data, electron_attachment_energy):
   - Converts raw simulation data into three analysis perspectives:
-    * df_events: Event frequency counts for all 28 collision processes
+    * df_events: Event frequency counts for all 28 events
     * df_energy: Energy transfer per event type (Count × delta_k), except electron attachment is set to the total electron attachment energy
     * df_species: Species production counts aggregated across all reactions
 

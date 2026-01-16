@@ -8,7 +8,7 @@ from constants import event_names, reaction_produced, delta_k, reactives
 Generation-Tracking Script for Radiolysis Monte Carlo Simulations
 
 This script tracks  events organized by electron generation (primary, secondary, 
-tertiary, etc.) to analyze cascade propagation patterns in radiolysis simulations.
+tertiary, etc.) to analyze event patterns in radiolysis simulations.
 
 WORKFLOW:
 1. Run Monte Carlo simulations with generation tracking at specified incident energy
