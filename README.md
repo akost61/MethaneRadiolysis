@@ -7,7 +7,7 @@ This repository contains a Python-based Monte Carlo simulation for methane radio
 
 - Monte Carlo simulation of methane radiolysis events
 
-- Energy deposition and transfer tracking (eV)
+- Energy (eV) transfer associated with each event
 
 - Species creation and reaction accounting
 
@@ -39,9 +39,26 @@ This repository contains a Python-based Monte Carlo simulation for methane radio
 
 Two simulation types can be ran inside the scripts directory - 1. Recording events occurrances of the simulation; 2. Recording events occurrances based on electron generations of the simulation.
 
-1. python3 main.py
+python3 main.py
 
-2. python3 main_generational.py
+
+
+## Structure
+
+.
+├── Events/
+│   ├── EIE.py                      # Electron Impact Excitation event paramets
+│   ├── Electron_Attachment.py      # Electron attachment event parameters
+│   ├── Ionization.py               # Ionization event parameters
+│   ├── Molecular_Excitation.py     # Molecular excitation event parameters
+│   └── Photon_Emission.py          # Photon emission event parameters
+│
+└── scripts/
+    ├── constants.py                # Global constants and event definitions
+    ├── convergence.py              # Produce convergence graphs for monte carlo sim
+    ├── cross_section.py            # Cross-section calculations 
+    ├── main.py                     # Primary entry point
+    └── run_simulation.py           # Simulation execution script 
 
 ## Runtime Notes
 
