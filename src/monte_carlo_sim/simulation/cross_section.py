@@ -1,14 +1,14 @@
 import math
 from numba import njit, prange
 import numpy as np
-from Events.Ionization import params_ion, slope_ion, offset_ion
-from Events.Molecular_Excitation import range_nu, params_nu, range_j, params_j, slope_nu, slope_j, offset_j, offset_nu
-from Events.EIE import range_eie_1, range_eie_2, range_eie_3, params_eie_1,params_eie_2,params_eie_3, offset_eie_1, offset_eie_2, offset_eie_3, slope_eie_1, slope_eie_2, slope_eie_3
-from Events.Electron_Attachment import params_ea, range_ea, offset_ea, slope_ea
-from Events.Photon_Emission import params_pho, slope_pho, offset_pho
-from scripts.constants import E_R, sigma_0, min_energy, delta_k
+from monte_carlo_sim.events.ionization import params_ion, slope_ion, offset_ion
+from monte_carlo_sim.events.molecular_excitation import range_nu, params_nu, range_j, params_j, slope_nu, slope_j, offset_j, offset_nu
+from monte_carlo_sim.events.eie import range_eie_1, range_eie_2, range_eie_3, params_eie_1,params_eie_2,params_eie_3, offset_eie_1, offset_eie_2, offset_eie_3, slope_eie_1, slope_eie_2, slope_eie_3
+from monte_carlo_sim.events.electron_attachment import params_ea, range_ea, offset_ea, slope_ea
+from monte_carlo_sim.events.photon_emission import params_pho, slope_pho, offset_pho
+from monte_carlo_sim.simulation.constants import E_R, sigma_0, min_energy, delta_k
 
-'''
+"""
 Cross Section Calculation and Event Selection for Methane Electron-Impact Processes
 
 This module computes collision cross sections and performs Monte Carlo event selection
@@ -50,7 +50,7 @@ select_event(eV, manipulated=-1):
   - Returns -1 if no event selected (should not occur with proper normalization)
 
 All functions JIT-compiled with Numba for performance. Energies in eV, cross sections in cm².
-'''
+"""
 
 @njit
 def find_range(eV, r):

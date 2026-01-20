@@ -1,10 +1,10 @@
 import numpy as np
 from tqdm import tqdm
 from numba import njit, prange
-from scripts.cross_section import select_event
-from scripts.constants import event_names, delta_k, min_energy
+from monte_carlo_sim.simulation.cross_section import select_event
+from monte_carlo_sim.simulation.constants import event_names, delta_k, min_energy
 
-'''
+"""
 Monte Carlo Simulation Engine
 
 This module performs Monte Carlo simulations of Electron-CH₄ inelastic interactions,
@@ -66,7 +66,7 @@ combine_data(simulation_results):
 
 Stack size set to 20 elements (sufficient for typical depths) as daughter electrons are handled first (dealing in lower energies).
 All energies in eV, event counts are integers.
-'''
+"""
 
 @njit
 def stack_push(stack, top, value):
