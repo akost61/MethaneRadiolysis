@@ -9,7 +9,10 @@ from constants import event_names, reaction_produced, delta_k
 Main Execution Script for Radiolysis Monte Carlo Simulations
 
 This script orchestrates the complete simulation workflow: running Monte Carlo simulation,
-processing results, generating convergence diagnostics, and exporting data to Excel.
+processing results, generating convergence diagnostics, and exporting data to Excel. 
+
+This script also tracks events organized by electron generation (primary, secondary, 
+tertiary, etc.) to analyze event patterns in radiolysis simulations.
 
 WORKFLOW:
 1. Run Monte Carlo simulations at specified incident energy
@@ -17,6 +20,11 @@ WORKFLOW:
 3. Process results into three data views: events, energy, and species
 4. Perform energy conservation validation
 5. Export results to Excel workbook
+
+6. Run Monte Carlo simulation with generation tracking at specified incident energy
+7. Organize event data by generation number primary = 0 ; secondary = 1; tertiary = 2; etc.)
+8. Calculate total events per generation
+9. Export generation-resolved data to Excel
 
 DATA PROCESSING:
 
@@ -28,6 +36,13 @@ create_dataframes(data, electron_attachment_energy):
  - Note - electron attachment is different from other events because it includes both changes in the potential energy of the molecules, but also the removal of the electron 
         and any excess kinetic energy from the simulation
 
+run_generation_simulations():
+  - Returns event counts organized by generation rather than by trajectory
+  - Each row represents a generation level (0=primary, 1=secondary, etc.)
+  - Each column represents one of the 28 collision event types
+  - Shape: [10 × 28 events]
+
+
 main():
   - Configurable parameters: incident_energy (eV), total_simulations
   - Runs simulation suite and generates diagnostic plots
@@ -37,6 +52,11 @@ main():
     * Energy_data: Energy distribution for each of 28 different events/channels
     * Species_data: Net species production with stoichiometry
   - File naming: {energy_in_keV}keV_{num_sims}_simulations_results.xlsx
+
+  - Creates single-sheet output: {energy_in_keV}keV_{total_simulations}_generational_results.xlsx
+  - Rows: Generation levels (indexed 0, 1, 2, ...)
+  - Columns: All 28 event types from event_names
+  - Additional 'Total' column: Sum of all events in each generation
 
 ENERGY CONSERVATION CHECK:
 Total input = incident_energy × total_simulations
@@ -95,13 +115,11 @@ def main():
         df_energy.to_excel(writer, sheet_name='Energy_data', index=False)
         df_species.to_excel(writer, sheet_name='Species_data', index=True)
 
-    
-    incident_energy = 100000 #eV
-    total_simulations = 10000
+
     data_100kev, terminating_energy, electron_attachment_energy = run_generation_simulations(incident_energy, total_simulations)
     df_events = pd.DataFrame(data_100kev, columns=event_names)
     df_events['Total'] = df_events.sum(axis=1)
-    df_events.to_excel(f"./{int(incident_energy/1000)}keV_{total_simulations}_simulations_results.xlsx", sheet_name='generation_data', index=True)
+    df_events.to_excel(f"./{int(incident_energy/1000)}keV_{total_simulations}_generational_results.xlsx", sheet_name='generation_data', index=True)
 
 
 

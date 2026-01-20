@@ -88,6 +88,8 @@ def ion_event(eV, index):
     x_max = (eV) / 2
     eV_new = (min_energy * x_max) / (x_max - u * (x_max - min_energy))
     eV_old = eV - eV_new
+
+
     return eV_old, eV_new
 
 
@@ -178,6 +180,7 @@ def ion_gen_event(generation, energy, index):
     x_max = eV / 2
     eV_new = (min_energy * x_max) / (x_max - u * (x_max - min_energy))
     eV_old = eV - eV_new
+
     return eV_new, gen_new, eV_old
 
 @njit
@@ -259,3 +262,5 @@ def combine_data(simulation_results):
     cumsum = np.cumsum(simulation_results, axis=0)
     counts = np.arange(1, len(simulation_results) + 1).reshape(-1, 1)
     return cumsum / counts
+
+
