@@ -1,3 +1,9 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+from monte_carlo_sim.simulation.run_simulation import run_simulations, run_generation_simulations
+from monte_carlo_sim.plotting.convergence import create_convergence_graphs
+from monte_carlo_sim.simulation.constants import event_names, delta_k, reaction_produced
+
 """
 Main Execution Script for Radiolysis Monte Carlo Simulations
 
@@ -61,14 +67,6 @@ Total output = Σ(event_count × delta_k) + terminating_energy + attachment_ener
 These should match within numerical precision.
 Default configuration: 100 keV incident electrons, 10,000  simulations.
 """
-
-import matplotlib.pyplot as plt
-import pandas as pd
-from monte_carlo_sim.simulation.run_simulation import run_simulations, run_generation_simulations
-from monte_carlo_sim.plotting.convergence import create_convergence_graphs
-from monte_carlo_sim.simulation.constants import event_names, delta_k, reaction_produced
-
-
 
 
 def create_dataframes(data, electron_attachment_energy):
