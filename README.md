@@ -35,11 +35,13 @@ This repository contains a Python-based Monte Carlo simulation for methane radio
 
 - matplotlib.pyplot
 
-## Usages
+## Usage
 
 Two simulation types can be ran inside src/monte_carlo_sim  - 1. Recording events occurrances of the simulation; 2. Recording events occurrances based on electron generations of the simulation.
 
+```bash
 python3 -m monte_carlo_sim.main
+```
 
 
 
@@ -101,3 +103,7 @@ main.py
 
 - Daughter electron generation data (/MethaneRadiolysis/results/100keV_10000_simulations_results.xlsx)
 
+
+## Contact
+
+- apkostiu@ualberta.ca
