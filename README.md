@@ -52,7 +52,7 @@ METHANERADIOLYSIS/
 │   └── monte_carlo_sim/
 │       ├── events/
 │       │   ├── __init__.py              # Events module initialization
-│       │   ├── ele.py                   # Electron Impact Excitation event parameters
+│       │   ├── eie.py                   # Electron Impact Excitation event parameters
 │       │   ├── electron_attachment.py   # Electron attachment event parameters
 │       │   ├── ionization.py            # Ionization event parameters
 │       │   ├── molecular_excitation.py  # Molecular excitation event parameters
