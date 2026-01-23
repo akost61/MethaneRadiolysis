@@ -12,10 +12,10 @@ requires-python = ">=3.8"
 
 requires-python = ">=3.8"
 dependencies = [
+    "numba>=0.56.0",
     "pandas",
     "numpy",
     "tqdm",
-    "numba",
 ]
 
 
