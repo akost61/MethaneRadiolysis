@@ -25,7 +25,7 @@ This repository contains a Python-based Monte Carlo simulation for methane radio
 
 ### Quick Install
 ```bash
-pip3 install git+https://github.com/akost61/MethaneRadiolysis.git
+pip install git+https://github.com/akost61/MethaneRadiolysis.git
 
 ```
 ### Troubleshooting Installation
@@ -35,7 +35,8 @@ If installation fails with an error about `llvmlite` or `numba`:
 ```bash
 conda create -n methane python=3.11
 conda activate methane
-pip3 install git+https://github.com/akost61/MethaneRadiolysis.git
+conda install numba
+python -m pip install git+https://github.com/akost61/MethaneRadiolysis.git
 ```
 
 
