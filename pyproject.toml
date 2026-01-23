@@ -9,7 +9,7 @@ authors = [{name = "Alex Kostiuk", email = "apkostiu@ualberta.ca"}]
 
 requires-python = ">=3.8"
 dependencies = [
-    "numba",
+    "numba>=0.56.0",
     "pandas",
     "numpy",
     "tqdm",
