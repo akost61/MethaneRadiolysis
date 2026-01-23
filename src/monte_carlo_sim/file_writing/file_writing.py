@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 from datetime import date
-from src.monte_carlo_sim.simulation.constants import event_dict
+from monte_carlo_sim.simulation.constants import event_dict
 
 """
 Methane Radiolysis Simulation - Data Export Module
