@@ -1,6 +1,5 @@
 from monte_carlo_sim.file_writing.file_writing import create_results_folder, write_s_csv, write_s_readme, write_g_csv, write_g_readme
 from monte_carlo_sim.simulation.run_simulation import run_simulations, run_generation_simulations
-from monte_carlo_sim.plotting.convergence import create_convergence_graphs
 from monte_carlo_sim.simulation.constants import event_names, delta_k, reaction_produced
 
 """
