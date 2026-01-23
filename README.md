@@ -1,7 +1,7 @@
 # Methane Radiolysis Monte Carlo Simulation
 ## Overview
 
-This repository contains a Python-based Monte Carlo simulation for methane radiolysis. The model tracks inelastic events, energy transfer, chemical species formation, and generational data of primary and daughter electrons until 1eV. Radiolysis of methane by electrons from a maximum of 100 keV, 28 different inelastic interaction events including ionization (with and without dissociation), electron impact excitation (neutral dissociation, molecular excitation and photon emission), and electron attachment dissociationThe code is optimized using numba and uses pandas for structured data analysis.
+This repository contains a Python-based Monte Carlo simulation for methane radiolysis. The model tracks inelastic events, energy transfer, chemical species formation, and generational data of primary and daughter electrons until 1eV. Radiolysis of methane by electrons from a maximum of 100 keV, 28 different inelastic interaction events including ionization (with and without dissociation), electron impact excitation (neutral dissociation, molecular excitation and photon emission), and electron attachment dissociation. The code is optimized using numba and uses pandas for structured data analysis.
 
 ## Features
 
@@ -35,11 +35,13 @@ This repository contains a Python-based Monte Carlo simulation for methane radio
 
 - matplotlib.pyplot
 
-## Usages
+## Usage
 
 Two simulation types can be ran inside src/monte_carlo_sim  - 1. Recording events occurrances of the simulation; 2. Recording events occurrances based on electron generations of the simulation.
 
+```bash
 python3 -m monte_carlo_sim.main
+```
 
 
 
@@ -52,7 +54,7 @@ METHANERADIOLYSIS/
 │   └── monte_carlo_sim/
 │       ├── events/
 │       │   ├── __init__.py              # Events module initialization
-│       │   ├── ele.py                   # Electron Impact Excitation event parameters
+│       │   ├── eie.py                   # Electron Impact Excitation event parameters
 │       │   ├── electron_attachment.py   # Electron attachment event parameters
 │       │   ├── ionization.py            # Ionization event parameters
 │       │   ├── molecular_excitation.py  # Molecular excitation event parameters
@@ -101,3 +103,7 @@ main.py
 
 - Daughter electron generation data (/MethaneRadiolysis/results/100keV_10000_simulations_results.xlsx)
 
+
+## Contact
+
+- apkostiu@ualberta.ca
