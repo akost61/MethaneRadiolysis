@@ -36,8 +36,14 @@ Install Miniconda(https://www.anaconda.com/download/success)
 
 ```bash
 conda create -n methane python=3.11
+```
+```bash
 conda activate methane
+```
+```bash
 conda install numba
+```
+```bash
 python -m pip install git+https://github.com/akost61/MethaneRadiolysis.git
 ```
 
@@ -88,8 +94,6 @@ METHANERADIOLYSIS/
 │       │   ├── ionization.py            # Ionization event parameters
 │       │   ├── molecular_excitation.py  # Molecular excitation event parameters
 │       │   └── photon_emission.py       # Photon emission event parameters
-│       ├── plotting/
-│       │   └── convergence.py           # Mean convergence plotting functions
 │       ├── simulation/
 │       │   ├── constants.py             # Physical constants and event names
 │       │   ├── cross_section.py         # Cross-section calculations for particle interactions
